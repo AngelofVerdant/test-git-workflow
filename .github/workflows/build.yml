@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     
     steps:
     - name: Checkout Repository
@@ -26,13 +26,3 @@ jobs:
       
     - name: Build Next.js App
       run: npm run build
-
-    - name: Deploy to EC2 instance
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USERNAME }}
-        key: ${{ secrets.EC2_SSH_KEY }}
-        port: ${{ secrets.EC2_PORT }}
-        script: |
-          scp -r ./next/* ${{ secrets.EC2_USERNAME}}@${{ secrets.EC2_HOST }}:/home/ubuntu/code
