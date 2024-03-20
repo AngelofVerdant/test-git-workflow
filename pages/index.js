@@ -13,7 +13,8 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.center}>
           <h1 className={styles.bigText}>
-            DEPLOYING A NEXTJS APP WITH GITHUB ACTIONS AND AWS END TO END CI/CD PIPELINE
+            DEPLOYING A NEXTJS APP WITH GITHUB <br/>
+            ACTIONS & AWS END TO END CI/CD PIPELINE
           </h1>
         </div>
       </main>
